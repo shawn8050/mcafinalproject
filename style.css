@@ -1,0 +1,856 @@
+/* =========================================
+   LEAKSHIELD GLOBAL CSS
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111111;
+    color: #eeeeee;
+}
+
+
+/* =========================================
+   LOGIN PAGE
+   ========================================= */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111111;
+}
+
+.login-container {
+    width: 420px;
+    padding: 40px;
+    background: #1d1d1b;
+    border: 1px solid #3c3c3a;
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.login-logo {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #17152b;
+    border-radius: 12px;
+
+    font-size: 28px;
+}
+
+.login-container h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.login-subtitle {
+    text-align: center;
+    color: #999999;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #bbbbbb;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 13px 14px;
+
+    background: #151515;
+    border: 1px solid #444444;
+    border-radius: 8px;
+
+    color: white;
+    font-size: 15px;
+
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #3182ce;
+}
+
+.remember-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 22px;
+
+    font-size: 13px;
+    color: #999999;
+}
+
+.remember-row a {
+    color: #5da9ff;
+    text-decoration: none;
+}
+
+.login-button {
+    width: 100%;
+    padding: 13px;
+
+    background: #2563eb;
+    border: none;
+    border-radius: 8px;
+
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: #1d4ed8;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 25px;
+
+    color: #666666;
+    font-size: 12px;
+}
+
+
+/* =========================================
+   MAIN APPLICATION
+   ========================================= */
+
+.app {
+    display: flex;
+    min-height: 100vh;
+    background: #111111;
+}
+
+
+/* =========================================
+   SIDEBAR
+   ========================================= */
+
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+
+    background: #20201e;
+    border-right: 1px solid #3a3a38;
+
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.logo-area {
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 25px;
+
+    border-bottom: 1px solid #3a3a38;
+}
+
+.logo-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #17152b;
+    border-radius: 8px;
+
+    margin-right: 12px;
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.sidebar-section {
+    padding: 20px 12px 5px;
+}
+
+.sidebar-title {
+    padding: 0 12px;
+    margin-bottom: 10px;
+
+    color: #888888;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+
+    padding: 11px 14px;
+    margin: 3px 0;
+
+    color: #cccccc;
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    transition: 0.2s;
+}
+
+.sidebar a:hover {
+    background: #333331;
+}
+
+.sidebar a.active {
+    background: #214d78;
+    color: #6fb4ff;
+}
+
+.sidebar-icon {
+    width: 25px;
+    margin-right: 8px;
+    text-align: center;
+}
+
+.findings-count {
+    margin-left: auto;
+
+    background: #a83232;
+    color: #ffffff;
+
+    padding: 3px 7px;
+
+    border-radius: 10px;
+
+    font-size: 11px;
+}
+
+.user-area {
+    margin-top: auto;
+
+    padding: 15px;
+
+    border-top: 1px solid #3a3a38;
+
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    background: #17548a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 10px;
+
+    font-size: 12px;
+}
+
+.user-name {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.user-role {
+    color: #888888;
+    font-size: 12px;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
+
+.main-content {
+    margin-left: 250px;
+
+    width: calc(100% - 250px);
+
+    min-height: 100vh;
+
+    background: #111111;
+}
+
+.topbar {
+    height: 80px;
+
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #333333;
+}
+
+.page-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.page-subtitle {
+    color: #888888;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+.content {
+    padding: 20px;
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.btn {
+    padding: 10px 17px;
+
+    border-radius: 8px;
+
+    border: 1px solid #555555;
+
+    background: #222222;
+
+    color: #eeeeee;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+.btn:hover {
+    background: #333333;
+}
+
+.btn-primary {
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.btn-danger {
+    background: #7f1d1d;
+    border-color: #991b1b;
+}
+
+.btn-success {
+    background: #166534;
+    border-color: #15803d;
+}
+
+
+/* =========================================
+   CARDS
+   ========================================= */
+
+.card {
+    background: #242422;
+
+    border: 1px solid #3d3d3a;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 17px;
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   DASHBOARD STAT CARDS
+   ========================================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background: #242422;
+
+    border: 1px solid #3d3d3a;
+
+    border-radius: 12px;
+
+    padding: 20px;
+}
+
+.stat-title {
+    color: #999999;
+
+    font-size: 13px;
+
+    margin-bottom: 8px;
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.stat-description {
+    color: #888888;
+
+    font-size: 12px;
+
+    margin-top: 5px;
+}
+
+.critical {
+    color: #ff6b6b;
+}
+
+.high {
+    color: #ffad42;
+}
+
+.medium {
+    color: #ffd34d;
+}
+
+.low {
+    color: #6bbf59;
+}
+
+
+/* =========================================
+   TWO COLUMN LAYOUT
+   ========================================= */
+
+.two-column {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+/* =========================================
+   FINDINGS
+   ========================================= */
+
+.finding {
+    display: flex;
+
+    align-items: center;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #3a3a38;
+}
+
+.finding:last-child {
+    border-bottom: none;
+}
+
+.severity {
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    margin-right: 12px;
+}
+
+.severity-critical {
+    background: #5d2929;
+    color: #ff8b8b;
+}
+
+.severity-high {
+    background: #5a4025;
+    color: #ffc978;
+}
+
+.severity-medium {
+    background: #55491e;
+    color: #ffe47a;
+}
+
+.severity-low {
+    background: #294425;
+    color: #9bdd87;
+}
+
+.finding-name {
+    font-weight: bold;
+
+    margin-bottom: 4px;
+}
+
+.finding-location {
+    color: #888888;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   SEARCH
+   ========================================= */
+
+.search-box {
+    width: 100%;
+
+    padding: 11px 14px;
+
+    background: #151515;
+
+    border: 1px solid #444444;
+
+    border-radius: 7px;
+
+    color: white;
+
+    outline: none;
+}
+
+.search-box:focus {
+    border-color: #3182ce;
+}
+
+
+/* =========================================
+   FILTERS
+   ========================================= */
+
+.filters {
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 15px;
+
+    background: #222222;
+
+    border: 1px solid #444444;
+
+    border-radius: 20px;
+
+    color: #cccccc;
+
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background: #214d78;
+    border-color: #3182ce;
+    color: #72b7ff;
+}
+
+
+/* =========================================
+   FORM ELEMENTS
+   ========================================= */
+
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    background: #161616;
+
+    border: 1px solid #444444;
+
+    border-radius: 7px;
+
+    color: white;
+
+    outline: none;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: #3182ce;
+}
+
+.form-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #aaaaaa;
+
+    font-size: 13px;
+}
+
+.form-group-main {
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   SCAN OPTIONS
+   ========================================= */
+
+.options-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+.option {
+    padding: 16px;
+
+    border: 1px solid #444444;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    background: #252523;
+}
+
+.option:hover {
+    border-color: #3182ce;
+}
+
+.option.selected {
+    background: #21476d;
+    border-color: #3182ce;
+}
+
+.option-title {
+    font-weight: bold;
+}
+
+.option-description {
+    color: #888888;
+
+    font-size: 12px;
+
+    margin-top: 4px;
+}
+
+
+/* =========================================
+   TABLE
+   ========================================= */
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+
+    color: #888888;
+
+    font-size: 12px;
+
+    padding: 14px;
+
+    border-bottom: 1px solid #444444;
+}
+
+td {
+    padding: 15px 14px;
+
+    border-bottom: 1px solid #333333;
+
+    font-size: 14px;
+}
+
+tr:hover {
+    background: #1d1d1b;
+}
+
+
+/* =========================================
+   TOGGLE
+   ========================================= */
+
+.toggle {
+    width: 48px;
+    height: 26px;
+
+    background: #555555;
+
+    border-radius: 20px;
+
+    position: relative;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.toggle::after {
+    content: "";
+
+    width: 20px;
+    height: 20px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    top: 3px;
+    left: 4px;
+
+    transition: 0.2s;
+}
+
+.toggle.active {
+    background: #00a982;
+}
+
+.toggle.active::after {
+    left: 24px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 210px;
+    }
+
+    .main-content {
+        margin-left: 210px;
+        width: calc(100% - 210px);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .sidebar {
+        width: 70px;
+    }
+
+    .logo-text,
+    .sidebar-title,
+    .sidebar a span,
+    .user-name,
+    .user-role {
+        display: none;
+    }
+
+    .logo-area {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .user-area {
+        justify-content: center;
+    }
+
+    .sidebar a {
+        justify-content: center;
+    }
+
+    .sidebar-icon {
+        margin: 0;
+    }
+
+    .main-content {
+        margin-left: 70px;
+        width: calc(100% - 70px);
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+}
