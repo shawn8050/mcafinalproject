@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>LeakShield - New Scan</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- LOGO -->
+
+        <div class="logo-area">
+
+            <div class="logo-icon">
+                🛡️
+            </div>
+
+            <div class="logo-text">
+                LeakShield
+            </div>
+
+        </div>
+
+
+        <!-- MAIN MENU -->
+
+        <div class="sidebar-section">
+
+            <div class="sidebar-title">
+                MAIN
+            </div>
+
+
+            <a href="dashboard.html">
+
+                <span class="sidebar-icon">
+                    ▦
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a href="new-scan.html"
+               class="active">
+
+                <span class="sidebar-icon">
+                    ⌗
+                </span>
+
+                <span>
+                    New Scan
+                </span>
+
+            </a>
+
+
+            <a href="findings.html">
+
+                <span class="sidebar-icon">
+                    ⚠
+                </span>
+
+                <span>
+                    Findings
+                </span>
+
+                <span class="findings-count">
+                    12
+                </span>
+
+            </a>
+
+
+            <a href="scan-history.html">
+
+                <span class="sidebar-icon">
+                    ◷
+                </span>
+
+                <span>
+                    Scan History
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- REPORTS -->
+
+        <div class="sidebar-section">
+
+            <div class="sidebar-title">
+                REPORTS
+            </div>
+
+
+            <a href="reports.html">
+
+                <span class="sidebar-icon">
+                    ▧
+                </span>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <a href="analytics.html">
+
+                <span class="sidebar-icon">
+                    ▥
+                </span>
+
+                <span>
+                    Analytics
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- ADMIN -->
+
+        <div class="sidebar-section">
+
+            <div class="sidebar-title">
+                ADMIN
+            </div>
+
+
+            <a href="users.html">
+
+                <span class="sidebar-icon">
+                    ♙
+                </span>
+
+                <span>
+                    Users
+                </span>
+
+            </a>
+
+
+            <a href="settings.html">
+
+                <span class="sidebar-icon">
+                    ⚙
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- USER -->
+
+        <div class="user-area">
+
+            <div class="user-avatar">
+                SL
+            </div>
+
+            <div>
+
+                <div class="user-name">
+                    Shawn Veigas
+                </div>
+
+                <div class="user-role">
+                    Developer
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================
+         MAIN CONTENT
+    ====================================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <div class="page-title">
+                    New Scan
+                </div>
+
+                <div class="page-subtitle">
+                    Scan your project for exposed secrets
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <button
+                    class="btn"
+                    onclick="window.location.href='dashboard.html'">
+
+                    ← Back to Dashboard
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================
+             PAGE CONTENT
+        ====================================== -->
+
+        <section class="content">
+
+
+            <!-- SOURCE SELECTION -->
+
+            <div class="card">
+
+                <div class="card-title">
+                    Select scan source
+                </div>
+
+
+                <div class="options-grid">
+
+
+                    <!-- GITHUB -->
+
+                    <div class="option selected"
+                         id="repositoryOption">
+
+                        <input
+                            type="radio"
+                            name="scanSource"
+                            value="repository"
+                            checked
+                            style="display:none;">
+
+                        <div class="option-title">
+                            🔗 Git Repository
+                        </div>
+
+                        <div class="option-description">
+                            Scan a GitHub or GitLab
+                            repository
+                        </div>
+
+                    </div>
+
+
+                    <!-- UPLOAD -->
+
+                    <div class="option"
+                         id="uploadOption">
+
+                        <input
+                            type="radio"
+                            name="scanSource"
+                            value="upload"
+                            style="display:none;">
+
+                        <div class="option-title">
+                            📁 Upload Folder
+                        </div>
+
+                        <div class="option-description">
+                            Upload your project
+                            files for scanning
+                        </div>
+
+                    </div>
+
+
+                    <!-- CODE -->
+
+                    <div class="option"
+                         id="codeOption">
+
+                        <input
+                            type="radio"
+                            name="scanSource"
+                            value="code"
+                            style="display:none;">
+
+                        <div class="option-title">
+                            </> Paste Code
+                        </div>
+
+                        <div class="option-description">
+                            Paste source code
+                            directly
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- REPOSITORY DETAILS -->
+
+            <div class="card">
+
+                <div class="card-title">
+                    Repository details
+                </div>
+
+
+                <!-- REPOSITORY URL -->
+
+                <div class="form-group-main">
+
+                    <label class="form-label">
+                        Repository URL
+                    </label>
+
+                    <input
+                        type="url"
+                        id="repositoryUrl"
+                        class="form-input"
+                        placeholder="https://github.com/username/project">
+
+                </div>
+
+
+                <!-- BRANCH -->
+
+                <div class="form-group-main">
+
+                    <label class="form-label">
+                        Branch
+                    </label>
+
+                    <select
+                        id="branch"
+                        class="form-select">
+
+                        <option value="main">
+                            main
+                        </option>
+
+                        <option value="master">
+                            master
+                        </option>
+
+                        <option value="develop">
+                            develop
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- CONNECT -->
+
+                <button
+                    class="btn"
+                    id="connectRepository">
+
+                    🔗 Connect Repository
+
+                </button>
+
+            </div>
+
+
+
+            <!-- SCAN OPTIONS -->
+
+            <div class="card">
+
+                <div class="card-title">
+                    Scan options
+                </div>
+
+
+                <div class="options-grid">
+
+
+                    <!-- API KEYS -->
+
+                    <div class="option selected">
+
+                        <input
+                            type="checkbox"
+                            checked
+                            style="display:none;">
+
+                        <div class="option-title">
+                            🔑 API Keys
+                        </div>
+
+                        <div class="option-description">
+                            Detect exposed API
+                            keys and service credentials
+                        </div>
+
+                    </div>
+
+
+                    <!-- TOKENS -->
+
+                    <div class="option selected">
+
+                        <input
+                            type="checkbox"
+                            checked
+                            style="display:none;">
+
+                        <div class="option-title">
+                            🎟 Authentication Tokens
+                        </div>
+
+                        <div class="option-description">
+                            Detect access tokens
+                            and authentication secrets
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORDS -->
+
+                    <div class="option selected">
+
+                        <input
+                            type="checkbox"
+                            checked
+                            style="display:none;">
+
+                        <div class="option-title">
+                            🔐 Passwords
+                        </div>
+
+                        <div class="option-description">
+                            Detect hardcoded passwords
+                            and credentials
+                        </div>
+
+                    </div>
+
+
+                    <!-- DATABASE -->
+
+                    <div class="option selected">
+
+                        <input
+                            type="checkbox"
+                            checked
+                            style="display:none;">
+
+                        <div class="option-title">
+                            🗄️ Database Credentials
+                        </div>
+
+                        <div class="option-description">
+                            Detect database usernames,
+                            passwords and connection strings
+                        </div>
+
+                    </div>
+
+
+                    <!-- CLOUD -->
+
+                    <div class="option">
+
+                        <input
+                            type="checkbox"
+                            style="display:none;">
+
+                        <div class="option-title">
+                            ☁️ Cloud Secrets
+                        </div>
+
+                        <div class="option-description">
+                            Detect AWS, Azure and
+                            Google Cloud credentials
+                        </div>
+
+                    </div>
+
+
+                    <!-- PRIVATE KEYS -->
+
+                    <div class="option">
+
+                        <input
+                            type="checkbox"
+                            style="display:none;">
+
+                        <div class="option-title">
+                            🔒 Private Keys
+                        </div>
+
+                        <div class="option-description">
+                            Detect exposed SSH and
+                            cryptographic private keys
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- EXCLUDE PATHS -->
+
+            <div class="card">
+
+                <div class="card-title">
+                    Exclude paths
+                </div>
+
+
+                <div class="form-group-main">
+
+                    <label class="form-label">
+                        Paths to exclude
+                    </label>
+
+                    <textarea
+                        class="form-textarea"
+                        rows="5"
+                        placeholder="node_modules/
+.git/
+dist/
+build/
+vendor/"></textarea>
+
+                </div>
+
+
+                <div style="
+                    color:#777;
+                    font-size:12px;
+                ">
+
+                    Enter one path per line.
+                    Excluded folders will not be scanned.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- START SCAN -->
+
+            <div class="card">
+
+                <div style="
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                    gap:20px;
+                    flex-wrap:wrap;
+                ">
+
+                    <div>
+
+                        <div class="card-title"
+                             style="margin-bottom:5px;">
+
+                            Ready to scan?
+
+                        </div>
+
+                        <div style="
+                            color:#888;
+                            font-size:13px;
+                        ">
+
+                            LeakShield will analyze your
+                            selected source for exposed secrets.
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="btn btn-primary"
+                        id="startScan">
+
+                        🔍 Start Scan
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

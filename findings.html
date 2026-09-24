@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Findings - LeakShield</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span>🛡️</span>
+            <h2>LeakShield</h2>
+        </div>
+
+        <nav>
+
+            <p class="nav-title">MAIN</p>
+
+            <a href="dashboard.html" data-page="dashboard">
+                📊 <span>Dashboard</span>
+            </a>
+
+            <a href="new-scan.html" data-page="new-scan">
+                🔍 <span>New Scan</span>
+            </a>
+
+            <a href="findings.html" data-page="findings" class="active">
+                🚨 <span>Findings</span>
+                <span class="nav-count">12</span>
+            </a>
+
+            <a href="scan-history.html" data-page="scan-history">
+                🕒 <span>Scan History</span>
+            </a>
+
+
+            <p class="nav-title">REPORTS</p>
+
+            <a href="reports.html" data-page="reports">
+                📄 <span>Reports</span>
+            </a>
+
+            <a href="analytics.html" data-page="analytics">
+                📈 <span>Analytics</span>
+            </a>
+
+
+            <p class="nav-title">ADMIN</p>
+
+            <a href="users.html" data-page="users">
+                👥 <span>Users</span>
+            </a>
+
+            <a href="settings.html" data-page="settings">
+                ⚙️ <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-user">
+
+            <div class="user-avatar">
+                SV
+            </div>
+
+            <div>
+                <strong>Shawn Veigas</strong>
+                <small>Developer</small>
+            </div>
+
+            <button onclick="logout()" class="logout-btn">
+                ↪
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+                <h1>Security Findings</h1>
+                <p>Review and manage detected secrets and credentials.</p>
+            </div>
+
+            <div class="topbar-actions">
+
+                <button class="btn secondary"
+                        onclick="window.location.href='new-scan.html'">
+                    + New Scan
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+        <section class="content">
+
+
+            <!-- SUMMARY -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon">🚨</div>
+
+                    <div>
+                        <p>Total Findings</p>
+                        <h2>12</h2>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon critical">!</div>
+
+                    <div>
+                        <p>Critical</p>
+                        <h2>3</h2>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon high">↑</div>
+
+                    <div>
+                        <p>High</p>
+                        <h2>2</h2>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon low">✓</div>
+
+                    <div>
+                        <p>Resolved</p>
+                        <h2>7</h2>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- FINDINGS CARD -->
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h2>Detected Secrets</h2>
+                        <p>Secrets discovered during repository scans.</p>
+                    </div>
+
+                </div>
+
+
+                <!-- SEARCH -->
+                <div class="filters">
+
+                    <input
+                        type="text"
+                        id="findingSearch"
+                        class="form-input"
+                        placeholder="🔎 Search findings..."
+                    >
+
+                    <button class="filter-btn active"
+                            data-filter="all">
+                        All
+                    </button>
+
+                    <button class="filter-btn"
+                            data-filter="critical">
+                        Critical
+                    </button>
+
+                    <button class="filter-btn"
+                            data-filter="high">
+                        High
+                    </button>
+
+                    <button class="filter-btn"
+                            data-filter="medium">
+                        Medium
+                    </button>
+
+                    <button class="filter-btn"
+                            data-filter="low">
+                        Low
+                    </button>
+
+                </div>
+
+
+                <!-- FINDINGS LIST -->
+                <div class="finding-list">
+
+
+                    <!-- FINDING 1 -->
+                    <div class="finding finding-row"
+                         data-severity="critical">
+
+                        <div class="finding-main">
+
+                            <div class="finding-icon critical">
+                                🔑
+                            </div>
+
+                            <div>
+
+                                <h3 class="finding-name">
+                                    AWS Secret Access Key
+                                </h3>
+
+                                <p class="finding-location">
+                                    📁 my-backend-api /
+                                    config/prod.env
+                                </p>
+
+                                <small>
+                                    Detected: AKIA••••••••
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="finding-meta">
+
+                            <span class="severity-critical">
+                                CRITICAL
+                            </span>
+
+                            <span class="status-badge">
+                                Open
+                            </span>
+
+                            <button
+                                class="btn small"
+                                onclick="resolveFinding(this)">
+                                Resolve
+                            </button>
+
+                            <button
+                                class="btn small danger"
+                                onclick="dismissFinding(this)">
+                                Dismiss
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FINDING 2 -->
+                    <div class="finding finding-row"
+                         data-severity="critical">
+
+                        <div class="finding-main">
+
+                            <div class="finding-icon critical">
+                                💳
+                            </div>
+
+                            <div>
+
+                                <h3 class="finding-name">
+                                    Stripe Secret Key
+                                </h3>
+
+                                <p class="finding-location">
+                                    📁 my-backend-api /
+                                    src/payments.js
+                                </p>
+
+                                <small>
+                                    Detected: sk_live_••••
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="finding-meta">
+
+                            <span class="severity-critical">
+                                CRITICAL
+                            </span>
+
+                            <span class="status-badge">
+                                Open
+                            </span>
+
+                            <button
+                                class="btn small"
+                                onclick="resolveFinding(this)">
+                                Resolve
+                            </button>
+
+                            <button
+                                class="btn small danger"
+                                onclick="dismissFinding(this)">
+                                Dismiss
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FINDING 3 -->
+                    <div class="finding finding-row"
+                         data-severity="high">
+
+                        <div class="finding-main">
+
+                            <div class="finding-icon high">
+                                🔐
+                            </div>
+
+                            <div>
+
+                                <h3 class="finding-name">
+                                    Database Password
+                                </h3>
+
+                                <p class="finding-location">
+                                    📁 infra-scripts /
+                                    docker-compose.yml
+                                </p>
+
+                                <small>
+                                    Detected: DB_PASSWORD=••••
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="finding-meta">
+
+                            <span class="severity-high">
+                                HIGH
+                            </span>
+
+                            <span class="status-badge">
+                                Open
+                            </span>
+
+                            <button
+                                class="btn small"
+                                onclick="resolveFinding(this)">
+                                Resolve
+                            </button>
+
+                            <button
+                                class="btn small danger"
+                                onclick="dismissFinding(this)">
+                                Dismiss
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FINDING 4 -->
+                    <div class="finding finding-row"
+                         data-severity="medium">
+
+                        <div class="finding-main">
+
+                            <div class="finding-icon medium">
+                                🔑
+                            </div>
+
+                            <div>
+
+                                <h3 class="finding-name">
+                                    GitHub Personal Token
+                                </h3>
+
+                                <p class="finding-location">
+                                    📁 frontend-app /
+                                    .env.local
+                                </p>
+
+                                <small>
+                                    Detected: ghp_••••••••
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="finding-meta">
+
+                            <span class="severity-medium">
+                                MEDIUM
+                            </span>
+
+                            <span class="status-badge">
+                                Open
+                            </span>
+
+                            <button
+                                class="btn small"
+                                onclick="resolveFinding(this)">
+                                Resolve
+                            </button>
+
+                            <button
+                                class="btn small danger"
+                                onclick="dismissFinding(this)">
+                                Dismiss
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FINDING 5 -->
+                    <div class="finding finding-row"
+                         data-severity="low">
+
+                        <div class="finding-main">
+
+                            <div class="finding-icon low">
+                                🔗
+                            </div>
+
+                            <div>
+
+                                <h3 class="finding-name">
+                                    Slack Webhook URL
+                                </h3>
+
+                                <p class="finding-location">
+                                    📁 frontend-app /
+                                    README.md
+                                </p>
+
+                                <small>
+                                    Detected: hooks.slack.com
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="finding-meta">
+
+                            <span class="severity-low">
+                                LOW
+                            </span>
+
+                            <span class="status-badge">
+                                Open
+                            </span>
+
+                            <button
+                                class="btn small"
+                                onclick="resolveFinding(this)">
+                                Resolve
+                            </button>
+
+                            <button
+                                class="btn small danger"
+                                onclick="dismissFinding(this)">
+                                Dismiss
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FINDING 6 -->
+                    <div class="finding finding-row"
+                         data-severity="high">
+
+                        <div class="finding-main">
+
+                            <div class="finding-icon high">
+                                ☁️
+                            </div>
+
+                            <div>
+
+                                <h3 class="finding-name">
+                                    Google Cloud API Key
+                                </h3>
+
+                                <p class="finding-location">
+                                    📁 cloud-service /
+                                    config/settings.js
+                                </p>
+
+                                <small>
+                                    Detected: AIza••••••••
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="finding-meta">
+
+                            <span class="severity-high">
+                                HIGH
+                            </span>
+
+                            <span class="status-badge">
+                                Open
+                            </span>
+
+                            <button
+                                class="btn small"
+                                onclick="resolveFinding(this)">
+                                Resolve
+                            </button>
+
+                            <button
+                                class="btn small danger"
+                                onclick="dismissFinding(this)">
+                                Dismiss
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- REMEDIATION CARD -->
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h2>Security Recommendations</h2>
+
+                        <p>
+                            Follow these steps to reduce the risk
+                            associated with exposed secrets.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="options-grid">
+
+                    <div class="option">
+
+                        <div class="option-icon">
+                            🔄
+                        </div>
+
+                        <div>
+                            <h3>Rotate Exposed Secrets</h3>
+
+                            <p>
+                                Immediately generate new credentials
+                                for exposed API keys and tokens.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="option">
+
+                        <div class="option-icon">
+                            🔒
+                        </div>
+
+                        <div>
+                            <h3>Use Environment Variables</h3>
+
+                            <p>
+                                Store sensitive credentials outside
+                                source code and configuration files.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="option">
+
+                        <div class="option-icon">
+                            🚫
+                        </div>
+
+                        <div>
+                            <h3>Update .gitignore</h3>
+
+                            <p>
+                                Prevent environment and secret files
+                                from being committed accidentally.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="option">
+
+                        <div class="option-icon">
+                            🛡️
+                        </div>
+
+                        <div>
+                            <h3>Scan Before Deployment</h3>
+
+                            <p>
+                                Run LeakShield scans before pushing
+                                changes into production.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

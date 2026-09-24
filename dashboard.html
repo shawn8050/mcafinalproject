@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LeakShield - Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="logo-area">
+
+            <div class="logo-icon">
+                🛡️
+            </div>
+
+            <div class="logo-text">
+                LeakShield
+            </div>
+
+        </div>
+
+
+        <!-- MAIN MENU -->
+        <div class="sidebar-section">
+
+            <div class="sidebar-title">
+                MAIN
+            </div>
+
+            <a href="dashboard.html"
+               data-page="dashboard.html"
+               class="active">
+
+                <span class="sidebar-icon">▦</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="new-scan.html"
+               data-page="new-scan.html">
+
+                <span class="sidebar-icon">⌗</span>
+
+                <span>New Scan</span>
+
+            </a>
+
+
+            <a href="findings.html"
+               data-page="findings.html">
+
+                <span class="sidebar-icon">⚠</span>
+
+                <span>Findings</span>
+
+                <span class="findings-count">
+                    12
+                </span>
+
+            </a>
+
+
+            <a href="scan-history.html"
+               data-page="scan-history.html">
+
+                <span class="sidebar-icon">◷</span>
+
+                <span>Scan History</span>
+
+            </a>
+
+        </div>
+
+
+        <!-- REPORTS -->
+        <div class="sidebar-section">
+
+            <div class="sidebar-title">
+                REPORTS
+            </div>
+
+
+            <a href="reports.html"
+               data-page="reports.html">
+
+                <span class="sidebar-icon">▧</span>
+
+                <span>Reports</span>
+
+            </a>
+
+
+            <a href="analytics.html"
+               data-page="analytics.html">
+
+                <span class="sidebar-icon">▥</span>
+
+                <span>Analytics</span>
+
+            </a>
+
+        </div>
+
+
+        <!-- ADMIN -->
+        <div class="sidebar-section">
+
+            <div class="sidebar-title">
+                ADMIN
+            </div>
+
+
+            <a href="users.html"
+               data-page="users.html">
+
+                <span class="sidebar-icon">♙</span>
+
+                <span>Users</span>
+
+            </a>
+
+
+            <a href="settings.html"
+               data-page="settings.html">
+
+                <span class="sidebar-icon">⚙</span>
+
+                <span>Settings</span>
+
+            </a>
+
+        </div>
+
+
+        <!-- USER -->
+        <div class="user-area">
+
+            <div class="user-avatar">
+                SL
+            </div>
+
+            <div>
+
+                <div class="user-name">
+                    Shawn Veigas
+                </div>
+
+                <div class="user-role">
+                    Developer
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <div class="page-title">
+                    Dashboard
+                </div>
+
+                <div class="page-subtitle">
+                    Last scan: 2 hours ago
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <button class="btn">
+                    ↓ Export PDF
+                </button>
+
+                <button
+                    class="btn btn-primary"
+                    onclick="window.location.href='new-scan.html'">
+
+                    + New Scan
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- PAGE CONTENT -->
+
+        <section class="content">
+
+
+            <!-- =========================
+                 STATISTICS
+            ========================== -->
+
+            <div class="stats-grid">
+
+
+                <!-- TOTAL FINDINGS -->
+
+                <div class="stat-card">
+
+                    <div class="stat-title">
+                        ⚠ Total Findings
+                    </div>
+
+                    <div class="stat-number critical">
+                        12
+                    </div>
+
+                    <div class="stat-description">
+                        across 3 repos
+                    </div>
+
+                </div>
+
+
+                <!-- CRITICAL -->
+
+                <div class="stat-card">
+
+                    <div class="stat-title">
+                        ⚠ Critical
+                    </div>
+
+                    <div class="stat-number critical">
+                        3
+                    </div>
+
+                    <div class="stat-description">
+                        needs immediate fix
+                    </div>
+
+                </div>
+
+
+                <!-- REPO SCORE -->
+
+                <div class="stat-card">
+
+                    <div class="stat-title">
+                        🛡 Repo Score
+                    </div>
+
+                    <div class="stat-number high">
+                        42
+                    </div>
+
+                    <div class="stat-description">
+                        out of 100
+                    </div>
+
+                </div>
+
+
+                <!-- RESOLVED -->
+
+                <div class="stat-card">
+
+                    <div class="stat-title">
+                        ✓ Resolved
+                    </div>
+
+                    <div class="stat-number low">
+                        7
+                    </div>
+
+                    <div class="stat-description">
+                        this week
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 TWO COLUMN AREA
+            ========================== -->
+
+            <div class="two-column">
+
+
+                <!-- =====================
+                     LATEST FINDINGS
+                ====================== -->
+
+                <div class="card">
+
+                    <div class="card-title">
+
+                        ⚠ Latest findings
+
+                        <span style="
+                            color:#888;
+                            font-size:12px;
+                            margin-left:8px;
+                        ">
+                            my-backend-api
+                        </span>
+
+                    </div>
+
+
+                    <!-- Finding 1 -->
+
+                    <div class="finding">
+
+                        <span class="severity
+                                     severity-critical">
+
+                            CRITICAL
+
+                        </span>
+
+                        <div>
+
+                            <div class="finding-name">
+                                AWS Secret Access Key
+                            </div>
+
+                            <div class="finding-location">
+                                config/prod.env
+                                · AKIA••••••••
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Finding 2 -->
+
+                    <div class="finding">
+
+                        <span class="severity
+                                     severity-critical">
+
+                            CRITICAL
+
+                        </span>
+
+                        <div>
+
+                            <div class="finding-name">
+                                Stripe Secret Key
+                            </div>
+
+                            <div class="finding-location">
+                                src/payments.js
+                                · sk_live_••••
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Finding 3 -->
+
+                    <div class="finding">
+
+                        <span class="severity
+                                     severity-high">
+
+                            HIGH
+
+                        </span>
+
+                        <div>
+
+                            <div class="finding-name">
+                                Database Password
+                            </div>
+
+                            <div class="finding-location">
+                                docker-compose.yml
+                                · DB_PASSWORD=••••
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Finding 4 -->
+
+                    <div class="finding">
+
+                        <span class="severity
+                                     severity-medium">
+
+                            MEDIUM
+
+                        </span>
+
+                        <div>
+
+                            <div class="finding-name">
+                                GitHub Personal Token
+                            </div>
+
+                            <div class="finding-location">
+                                .env.local
+                                · ghp_••••••••
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Finding 5 -->
+
+                    <div class="finding">
+
+                        <span class="severity
+                                     severity-low">
+
+                            LOW
+
+                        </span>
+
+                        <div>
+
+                            <div class="finding-name">
+                                Slack Webhook URL
+                            </div>
+
+                            <div class="finding-location">
+                                README.md
+                                · hooks.slack.com
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =====================
+                     SECURITY SCORE
+                ====================== -->
+
+                <div class="card">
+
+                    <div class="card-title">
+                        🛡 Security score
+                    </div>
+
+
+                    <!-- Score Circle -->
+
+                    <div style="
+                        display:flex;
+                        justify-content:center;
+                        align-items:center;
+                        padding:30px 0;
+                    ">
+
+                        <div style="
+                            width:150px;
+                            height:150px;
+
+                            border-radius:50%;
+
+                            border:14px solid #454545;
+
+                            border-top-color:#ef5350;
+                            border-right-color:#ef5350;
+
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+
+                            font-size:32px;
+                            font-weight:bold;
+                        ">
+
+                            42
+
+                        </div>
+
+                    </div>
+
+
+                    <div style="
+                        text-align:center;
+                        color:#ff6b6b;
+                        font-weight:bold;
+                    ">
+
+                        Poor — needs attention
+
+                    </div>
+
+
+                    <div style="
+                        text-align:center;
+                        color:#888;
+                        margin-top:8px;
+                        margin-bottom:20px;
+                        font-size:13px;
+                    ">
+
+                        3 Critical issues open
+
+                    </div>
+
+
+
+                    <!-- Critical -->
+
+                    <div style="margin-bottom:15px;">
+
+                        <div style="
+                            display:flex;
+                            justify-content:space-between;
+                            margin-bottom:5px;
+                        ">
+
+                            <span>
+                                Critical
+                            </span>
+
+                            <span class="critical">
+                                3
+                            </span>
+
+                        </div>
+
+                        <div style="
+                            height:6px;
+                            background:#333;
+                            border-radius:5px;
+                        ">
+
+                            <div style="
+                                width:65%;
+                                height:100%;
+                                background:#9f3030;
+                                border-radius:5px;
+                            "></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- High -->
+
+                    <div style="margin-bottom:15px;">
+
+                        <div style="
+                            display:flex;
+                            justify-content:space-between;
+                            margin-bottom:5px;
+                        ">
+
+                            <span>
+                                High
+                            </span>
+
+                            <span class="high">
+                                4
+                            </span>
+
+                        </div>
+
+                        <div style="
+                            height:6px;
+                            background:#333;
+                            border-radius:5px;
+                        ">
+
+                            <div style="
+                                width:78%;
+                                height:100%;
+                                background:#f0a52c;
+                                border-radius:5px;
+                            "></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Medium -->
+
+                    <div style="margin-bottom:15px;">
+
+                        <div style="
+                            display:flex;
+                            justify-content:space-between;
+                            margin-bottom:5px;
+                        ">
+
+                            <span>
+                                Medium
+                            </span>
+
+                            <span class="medium">
+                                3
+                            </span>
+
+                        </div>
+
+                        <div style="
+                            height:6px;
+                            background:#333;
+                            border-radius:5px;
+                        ">
+
+                            <div style="
+                                width:58%;
+                                height:100%;
+                                background:#e9b82f;
+                                border-radius:5px;
+                            "></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Low -->
+
+                    <div>
+
+                        <div style="
+                            display:flex;
+                            justify-content:space-between;
+                            margin-bottom:5px;
+                        ">
+
+                            <span>
+                                Low
+                            </span>
+
+                            <span class="low">
+                                2
+                            </span>
+
+                        </div>
+
+                        <div style="
+                            height:6px;
+                            background:#333;
+                            border-radius:5px;
+                        ">
+
+                            <div style="
+                                width:42%;
+                                height:100%;
+                                background:#27833d;
+                                border-radius:5px;
+                            "></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 RECENT SCANS
+            ========================== -->
+
+            <div class="card">
+
+                <div class="card-title">
+                    ◷ Recent scans
+                </div>
+
+
+                <div class="finding">
+
+                    <div style="flex:1;">
+
+                        <div class="finding-name">
+                            my-backend-api
+                        </div>
+
+                        <div class="finding-location">
+                            GitHub repository · main
+                        </div>
+
+                    </div>
+
+                    <span class="severity
+                                 severity-critical">
+
+                        3 Critical
+
+                    </span>
+
+                    <span style="
+                        margin-left:20px;
+                        color:#6bbf59;
+                    ">
+
+                        Complete
+
+                    </span>
+
+                </div>
+
+
+                <div class="finding">
+
+                    <div style="flex:1;">
+
+                        <div class="finding-name">
+                            frontend-app
+                        </div>
+
+                        <div class="finding-location">
+                            GitHub repository · develop
+                        </div>
+
+                    </div>
+
+                    <span class="severity
+                                 severity-high">
+
+                        1 High
+
+                    </span>
+
+                    <span style="
+                        margin-left:20px;
+                        color:#6bbf59;
+                    ">
+
+                        Complete
+
+                    </span>
+
+                </div>
+
+
+                <div class="finding">
+
+                    <div style="flex:1;">
+
+                        <div class="finding-name">
+                            infra-scripts
+                        </div>
+
+                        <div class="finding-location">
+                            GitHub repository · main
+                        </div>
+
+                    </div>
+
+                    <span class="severity
+                                 severity-low">
+
+                        1 Low
+
+                    </span>
+
+                    <span style="
+                        margin-left:20px;
+                        color:#6bbf59;
+                    ">
+
+                        Complete
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
